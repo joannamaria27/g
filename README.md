@@ -22,7 +22,7 @@ Visit the live website at: [GardenWebApp Live](https://joannamaria27.github.io/g
 
 ## 👨‍💻 Author
 
- The website was develop by [JoannaMaria27](https://github.com/joannamaria27), but designed by [adRespect](https://adrespect.pl/)
+The website was designed by [adRespect](https://adrespect.pl/), but was developed by [JoannaMaria27](https://github.com/joannamaria27) as part of the recruitment process.
 
 ## 🚀 Getting Started
 Tools used:

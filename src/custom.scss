@@ -1,0 +1,69 @@
+$primary: #DCC1AB;
+$success: #1B5B31;
+$secondary: #F5F0EC;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+.bi-lg{
+  font-size: 2rem;
+}
+.image-background-intro {
+  background-image: url('./image/intro.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+.image-background-intro-contact {
+  background-image: url('./image/projects_3.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+.image-background-company {
+  background-image: url('./image/company.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+.max-text{
+  max-width: 70%;
+}
+#grid {
+  position: relative;
+  z-index: 0;
+}
+ #grid::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(to bottom, rgba(247, 0, 255, 0) 0%, $primary 100%);
+      z-index: 500;
+ }
+#expand-button {
+  position: relative;
+  z-index: 600;
+}
+.card:hover {
+  background-color: $success;
+  color:white;
+  a{
+    color: white !important;
+  }
+  cursor: pointer;
+}
+.container-fluid
+{
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+.static-height{
+  height: calc(100vh - 200px);
+}

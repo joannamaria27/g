@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiardDesign</title>
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand px-5" aria-current="page" href="#">
+                <span class="fw-bold">giard</span>design
+            </a>
+            <button class="navbar-toggler m-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel" href="#intro">giarddesign</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <ul class="nav navbar-nav mb-2 justify-content-end">
+                    <li class="nav-item dropdown mx-3">
+                        <a class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Oferta
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    onclick="scrollAndOpenModal('#offer','modalProjects')">projekty</a></li>
+                            <li><a class="dropdown-item"
+                                    onclick="scrollAndOpenModal('#offer','modalVisualization')">wizualizacja</a></li>
+                            <li><a class="dropdown-item"
+                                    onclick="scrollAndOpenModal('#offer','modalRealization')">realizacja</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#offer">cała oferta</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link text-dark" href="#company">O firmie</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link text-dark" href="#projects" data-offset-top="0">Realizacje</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link text-dark" href="#contact">Kontakt</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <div class="d-flex align-items-center ">
+                            <div class="collapse collapse-horizontal" id="collapseSearch">
+                                <form id="searchForm" role="search" class="d-flex align-items-center">
+                                    <input class="form-control" type="text" placeholder="Szukaj" aria-label="Search"
+                                        id="searchInput">
+                                    <button class="btn mx-2 btn-outline-dark" type="button"
+                                        onclick="searchText()">szukaj </button>
+                                </form>
+                            </div>
+                            <button class="btn  me-5" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="intro" class="min-vh-100 bg-primary">
+        <div id="carouselIndex" class="carousel slide ">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center align-items-center align-items-sm-normal">
+                        <div class="col-md-7 p-5 d-block">
+                            <p class="display-4 fw-semibold pt-5">Nowoczesna <br /> aranżacja <br /> Twojego ogrodu </p>
+                            <p class="py-3 max-text">Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
+                                realizacji.
+                                Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu. </p>
+                            <a class="btn btn-success rounded-5 me-4 mt-sm-2" href="#contact">Skontaktuj się z nami</a>
+                            <a class="btn btn-outline-success rounded-5 mt-2" href="#projects">Zobacz nasze realizacje
+                                <i class="bi bi-arrow-down"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-5 bg-success d-none d-md-block image-background-intro"> </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="d-flex justify-content-center align-items-center align-items-sm-normal">
+                        <div class="col-md-5 bg-success d-none d-md-block image-background-intro-contact"> </div>
+                        <div class="col-md-7 text-dark p-5">
+                            <p class="display-4 fw-semibold ps-md-5 pt-5">Kontakt </p>
+                            <p class="py-3 max-text ps-md-5 ">Masz pytania lub potrzebujesz porady? Skontaktuj się z
+                                nami: </p>
+                            <p> <span class="fw-semibold ps-md-5 ">Email: </span> kontakt@giarddesign.com</p>
+                            <p> <span class="fw-semibold ps-md-5">Telefon: </span> +48 000 000 000</p>
+                            <a class="ms-md-5 btn btn-outline-light rounded-5" href="#contact">Poznaj nas bliżej <i
+                                    class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-absolute bottom-0 end-0 bg-white p-2 d-none d-md-block">
+                    <a>
+                        <i class="text-dark bi bi-arrow-left bi-lg p-2" data-bs-target="#carouselIndex"
+                            data-bs-slide="prev"></i>
+                        <i class="text-dark bi bi-arrow-right bi-lg p-2" data-bs-target="#carouselIndex"
+                            data-bs-slide="next"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offer"
+        class="min-vh-100 bg-secondary d-flex justify-content-center align-items-center align-items-sm-normal">
+        <div class="container-fluid pt-5 p-lg-5">
+            <div class="row p-5 mx-sm-5">
+                <p class="ps-lg-5 text-success"><small>Oferta</small></p>
+                <p class="ps-lg-5 display-6 fw-semibold">Działamy <span class="fst-italic">kompleksowo</span> </p>
+                <p class="ps-lg-5 pt-4 max-text">Oferujemy kompletną obsługę inwestycji terenów zielonych. Projektujemy
+                    nowoczesne ogrody przydomowe oraz rezydencjonalne. Stworzymy dla Ciebie projekt, zwizualizujemy
+                    go i wcielimy w życie, a na każdym etapie posłużymy radą i wieloletnim doświadczeniem. </p>
+            </div>
+            <div class="row m-3">
+                <div class="col-sm-4 p-4">
+                    <div class="card rounded-5 card-body text-left p-4 p-lg-5" data-bs-toggle="modal"
+                        data-bs-target="#modalProjects">
+                        <i class="bi bi-pencil bi-lg"></i>
+                        <h4 class="fw-semibold">Projekty</h4>
+                        <p>Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej
+                            przestrzeni.</p>
+                        <a class="text-success">Dowiedz się wiecej <i class="bi bi-arrow-right"></i> </a>
+                    </div>
+                </div>
+                <div class="col-sm-4 p-4">
+                    <div class="card rounded-5 card-body text-left p-4 p-lg-5" data-bs-toggle="modal"
+                        data-bs-target="#modalVisualization">
+                        <i class="bi bi-eye bi-lg"></i>
+                        <h4 class="fw-semibold">Wizualizacja</h4>
+                        <p>Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego spaceru animowanego w technologii
+                            3D.</p>
+                        <a class="text-success">Dowiedz się wiecej <i class="bi bi-arrow-right"></i> </a>
+                    </div>
+                </div>
+                <div class="col-sm-4 p-4">
+                    <div class="card rounded-5 card-body text-left p-4 p-lg-5" data-bs-toggle="modal"
+                        data-bs-target="#modalRealization">
+                        <i class="bi bi-stars bi-lg"></i>
+                        <h4 class="fw-semibold">Realizacja</h4>
+                        <p>Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych technologii.
+                        </p>
+                        <a class="text-success">Dowiedz się wiecej <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalProjects" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Projekty</h5>
+                    </div>
+                    <div class="modal-body  py-3">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-brush bi-lg pe-3"></i>
+                            <p>Projekt możesz wybrać z katalogu gotowych projektów, ale również umówić się by został
+                                stworzony tylko dla Ciebie. Na pierwszym spotkaniu określamy czas przygotowania projektu
+                                oraz jego wycenę. Projekt z katalogu jest dostosowywany pod Twoje wymagania.
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-palette bi-lg pe-3"></i>
+                            <p>Zapewniamy również tworzenie projektów przez Internet. Bez wychodzenia z domu. Potrzebny
+                                czas oraz wszystkie etapy wyglądają tak samo, ale jest możliwość podjęcia współpracy
+                                również w odległych częsciach Polski lub za granicą.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Zamknij</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalVisualization" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Wizualizacja</h5>
+                    </div>
+                    <div class="modal-body py-3">
+                        <p>Do każdego projektu zostaje stworzona wizualizacja w technologii 3D. Zarówno w formie
+                            wirtualnego spaceru jak i zdjęć charakterystycznych miejsc projektu. </p>
+                        <img src="./image/projects_2.png" class="d-block mx-auto img-fluid">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Zamknij</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalRealization" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Realizacja</h5>
+                    </div>
+                    <div class="modal-body py-3">
+                        <p>Cały projekt obejmuje:</p>
+                        <p><span class="fw-semibold">Kolorowy Rzut Z Góry:</span> Graficzne przedstawienie
+                            planu
+                            zagospodarowania terenu, które
+                            wyraźnie pokazuje, jak obszar będzie wyglądać z lotu ptaka. To pomaga w lepszym
+                            zrozumieniu projektu.</p>
+                        <p> <span class="fw-semibold">Wizualizacja: </span>Tworzenie wirtualnych wizualizacji
+                            projektu, które pozwalają zobaczyć, jak
+                            całość będzie wyglądać w trójwymiarze. To pomaga w wyobrażeniu sobie efektu końcowego.
+                        <p><span class="fw-semibold">Projekt Techniczny Nasadzeń Roślinnych: </span>Dokładny plan,
+                            który określa, jakie rośliny
+                            zostaną zasadzone, gdzie zostaną umieszczone, i jak będą pielęgnowane. To zawiera
+                            specyfikacje odnośnie rodzaju i ilości roślin.</p>
+                        <p><span class="fw-semibold">Schemat Nawierzchni: </span>Plan, który pokazuje, jakie
+                            materiały będą używane do nawierzchni,
+                            na przykład chodników, ścieżek lub tarasów.</p>
+                        <p><span class="fw-semibold">Schemat Układu Lamp: </span>Określenie, gdzie zostaną
+                            umieszczone oświetlenie, lampy, i jakie
+                            rodzaje lamp zostaną użyte.</p>
+                        <p><span class="fw-semibold">Specyfikacja Roślinna: </span> Dokładny opis roślin, w tym ich
+                            rodzaje, ilość, rozmiary i
+                            miejsca sadzenia.</p>
+                        <p><span class="fw-semibold">Zalecenia Pielęgnacyjne: </span>Wskazówki dotyczące
+                            pielęgnacji projektu, takie jak podlewanie,
+                            przycinanie roślin, utrzymanie nawierzchni i oświetlenia.</p>
+                        W skrócie, projekt obejmuje kompleksowy plan zagospodarowania terenu, który uwzględnia
+                        wszystkie aspekty od wizualizacji po techniczne szczegóły, aby stworzyć piękne i
+                        funkcjonalne środowisko.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Zamknij</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="company"
+        class="min-vh-100 bg-success d-flex justify-content-center align-items-center align-items-sm-normal">
+        <div class="col-md-5 bg-success d-none d-md-block image-background-company"> </div>
+        <div class="col-md-7 text-white p-5">
+
+            <p class="ps-md-5"><small>O firmie</small></p>
+            <p class="ps-md-5 display-6 fw-semibold">Tworzymy </br>z <span class="fst-italic">pasją</span> </p>
+            <p class="ps-md-5 pb-5 pt-3">Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą
+                wykwalifikowani projektanci oraz architekci, których zadaniem jest rozpoznanie i realizacja potrzeb
+                każdego Klienta. Nasza specjalizacja to przestrzenie nowoczesne, które charakteryzuje minimalizm,
+                geometria i elegancka prostota. Tworzymy ogrody małoobsługowe, dostosowane do współczesnego trybu
+                życia.
+            </p>
+            <a class="ms-md-5 btn btn-outline-light rounded-5" href="#contact">Poznaj nas bliżej <i
+                    class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="projects" class="min-vh-100 bg-primary">
+        <div class="p-5" id="title">
+            <p class=" text-success pt-5"><small>Realizacje</small></p>
+            <p class="display-6 fw-semibold">Nasze <span class="fst-italic">projekty</span> </p>
+        </div>
+        <div class="grid" id="grid">
+            <div id="grid-sizer" class="grid-sizer col-6 col-sm-4 ">
+                <div class="grid-item col-6 col-sm-4 p-3">
+                    <img src="./image/projects_1.png" class="img-fluid container-fluid" data-bs-toggle="modal"
+                        data-bs-target="#modalProjectsGallery" data-image-index="0" />
+                </div>
+                <div class="grid-item col-6 col-sm-4  p-3">
+                    <img src="./image/projects_2.png" class="img-fluid container-fluid" data-bs-toggle="modal"
+                        data-bs-target="#modalProjectsGallery" data-image-index="1" />
+                </div>
+                <div class="grid-item col-6 col-sm-4  p-3">
+                    <img src="./image/projects_3.png" class="img-fluid container-fluid" data-bs-toggle="modal"
+                        data-bs-target="#modalProjectsGallery" data-image-index="2" />
+                </div>
+                <div class="grid-item col-6 col-sm-4  p-3">
+                    <img src="./image/projects_4.png" class="img-fluid container-fluid" data-bs-toggle="modal"
+                        data-bs-target="#modalProjectsGallery" data-image-index="3" />
+                </div>
+                <div class="grid-item col-6 col-sm-4  p-3">
+                    <img src="./image/projects_5.png" class="img-fluid container-fluid" data-bs-toggle="modal"
+                        data-bs-target="#modalProjectsGallery" data-image-index="4" />
+                </div>
+                <div class="grid-item col-6 col-sm-4  p-3">
+                    <img src="./image/projects_6.png" class="img-fluid container-fluid" data-bs-toggle="modal"
+                        data-bs-target="#modalProjectsGallery" data-image-index="5" />
+                </div>
+                <div class="grid-item col-6 col-sm-4 p-3">
+                    <img src="./image/projects_7.png" class="img-fluid container-fluid" data-bs-toggle="modal"
+                        data-bs-target="#modalProjectsGallery" data-image-index="6" />
+                </div>
+                <div class="grid-item col-6 col-sm-4 p-3">
+                    <img src="./image/projects_8.png" class="img-fluid container-fluid" data-bs-toggle="modal"
+                        data-bs-target="#modalProjectsGallery" data-image-index="7" />
+                </div>
+                <div class="grid-item col-6 col-sm-4 p-3">
+                    <img src="./image/projects_9.png" class="img-fluid container-fluid" data-bs-toggle="modal"
+                        data-bs-target="#modalProjectsGallery" data-image-index="8" />
+                </div>
+            </div>
+            <button id="expand-button"
+                class="mb-5 btn btn-outline-dark rounded-5 position-absolute bottom-0 start-50 translate-middle">Rozwiń
+                <i class="bi bi-arrow-down"></i></button>
+        </div>
+
+        <div class="modal fade " id="modalProjectsGallery" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="imageModal1Label">Galeria projektów</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div
+                        class="modal-body d-flex justify-content-center align-items-center overflow-auto static-height">
+                        <img src="" class="img-fluid" id="modalImage">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="prevButton">Poprzednie</button>
+                        <button type="button" class="btn btn-success" id="nextButton">Następne</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact" class="text-white min-vh-100 bg-dark">
+        <div class="bg-secondary d-flex justify-content-center align-items-center p-5">
+            <div class="bg-success d-flex justify-content-center align-items-center ">
+                <div class="p-5 display-6">
+                    <p class="flex-column flex-sm-row">Zostańmy w kontakcie!</p>
+                    <p class="">Znajdziesz nas na <span class="fst-italic fw-semibold">Instagramie</span>.
+                    </p>
+                </div>
+                <div class="pe-5">
+                    <p class="">Śledź nasze <br />najnowsze realizacje!</p>
+                    <a class="btn btn-light text-success rounded-5" href="https://www.instagram.com"
+                        target="_blank">Instagram </a>
+                </div>
+            </div>
+        </div>
+        <div class="px-5 pt-5">
+            <div class="d-flex justify-content-between flex-column flex-sm-row">
+                <div>
+                    <p class="ps-2"> <span class="fw-bold">giard</span>design</p>
+                </div>
+                <div class="d-flex align-items-center flex-column flex-sm-row gap-2">
+                    <span class="px-5">Daj znać, co możemy dla Ciebie zrobić!</span>
+                    <a class="btn btn-success rounded-5" href="mailto:giard@kontakt.com">Skontaktuj się z nami</a>
+                </div>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between flex-column flex-sm-row">
+                <div>
+                    <a class="text-white btn" href="mailto:giard@kontakt.com" target="_blank">Kontakt</a>
+                    <a class="text-white btn" href="https://www.instagram.com" target="_blank">Instagram</a>
+                    <a class="text-white btn" href="https://www.facebook.com" target="_blank">Facebook</a>
+                    <a class="text-white btn" href="https://www.linkedin.com" target="_blank">Linkedin</a>
+                </div>
+                <div class="d-flex align-items-center flex-column flex-sm-row">
+                    <p class="px-5">000-000-000</p>
+                    <p>giarddesign@kontakt.pl</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white">
+        <div class="p-5 d-flex justify-content-between flex-column flex-sm-row">
+            <p>Prawa zastrzeżone © 2022</p>
+            <p>made by <span class="fw-bold">ad</span>Respect</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -87,7 +87,9 @@ document.addEventListener('DOMContentLoaded', function () {
             columnWidth: '.grid-sizer',
             percentPosition: true
         });
-        masonry.layout();
+        imagesLoaded(".grid", function () {
+            masonry.layout();
+        });
     }
 
     function deleteImages() {
@@ -103,7 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const totalHeight = titleContainer.clientHeight + photoContainer.clientHeight;
         section.style.minHeight = totalHeight + 'px';
       
-        expandButton.innerHTML = '<span>Rozwiń <i class="bi bi-arrow-down"></i></span>'        
+        expandButton.innerHTML = '<span>Rozwiń <i class="bi bi-arrow-down"></i></span>'   
+          
         expanded = false;
         
         const masonry = new Masonry(photoContainer, {
@@ -111,13 +114,17 @@ document.addEventListener('DOMContentLoaded', function () {
             columnWidth: '.grid-sizer',
             percentPosition: true
         });
-        masonry.layout();
+        imagesLoaded(".grid", function () {
+            masonry.layout();
+        });
     }
     expandButton.addEventListener('click', function () {
         if(!expanded)
             addAllImages(); 
-        else
+        else{
             deleteImages();
+            expandButton.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 
 });
